@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "883461140373",
+    "project_id": "ytcommerce-ae517",
+    "storage_bucket": "ytcommerce-ae517.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883461140373:android:534c24b31bab2378af909c",
+        "android_client_info": {
+          "package_name": "com.ytcommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883461140373-annri4flgfqiak2m2s596oo30ap8i3mo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ytcommerce",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "883461140373-bb3v8mqirvrk4q17rvcmdqjk5ausagpm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa2hazetKTJUKIlkK8KbTJyd6Ax5_VG30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883461140373-bb3v8mqirvrk4q17rvcmdqjk5ausagpm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
