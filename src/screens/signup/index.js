@@ -22,7 +22,7 @@ export default function Signup({navigation}) {
           text2: 'user is created successfully 👋',
         });
         setTimeout(() => {
-          navigation.replace('signin');
+          navigation.replace('Auth');
         }, 2000);
       })
       .catch(error => {

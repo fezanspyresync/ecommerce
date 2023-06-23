@@ -7,6 +7,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import SignIn from './src/screens/signin';
 import Signup from './src/screens/signup';
 import Toast from 'react-native-toast-message';
+import Welcomescreen from './src/screens/welcomeScreen';
+import DrawerStack from './src/navigation/drawerStack';
 
 const Stack = createStackNavigator();
 
@@ -15,7 +17,7 @@ function App() {
     <>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen
+          {/* <Stack.Screen
             name="splash"
             component={Splash}
             options={{
@@ -35,14 +37,14 @@ function App() {
             options={{
               headerShown: false,
             }}
+          /> */}
+          <Stack.Screen
+            name="Auth"
+            component={DrawerStack}
+            options={{
+              headerShown: false,
+            }}
           />
-          {/* <Stack.Screen
-          name="voicenote"
-          component={VoiceNotes}
-          options={{
-            headerShown: false,
-          }}
-        /> */}
         </Stack.Navigator>
       </NavigationContainer>
       <Toast />

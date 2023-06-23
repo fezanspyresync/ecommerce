@@ -5,10 +5,38 @@ import RoundedButton from '../../components/RoundedButton';
 import FulloundedButton from '../../components/FulloundedButton';
 import {onGoogleButtonPress} from '../../config/firebase/firebase';
 import Toast from 'react-native-toast-message';
+import auth from '@react-native-firebase/auth';
+import {LoginManager, AccessToken} from 'react-native-fbsdk-next';
 
 export default function SignIn({navigation}) {
+  async function onFacebookButtonPress() {
+    // Attempt login with permissions
+    const result = await LoginManager.logInWithPermissions([
+      'public_profile',
+      'email',
+    ]);
+
+    if (result.isCancelled) {
+      throw 'User cancelled the login process';
+    }
+
+    // Once signed in, get the users AccesToken
+    const data = await AccessToken.getCurrentAccessToken();
+
+    if (!data) {
+      throw 'Something went wrong obtaining access token';
+    }
+
+    // Create a Firebase credential with the AccessToken
+    const facebookCredential = auth.FacebookAuthProvider.credential(
+      data.accessToken,
+    );
+
+    // Sign-in the user with the credential
+    return auth().signInWithCredential(facebookCredential);
+  }
+
   const googleSignIn = async () => {
-    console.log('hdvsahdasdastfds');
     const data = await onGoogleButtonPress();
     console.log(data);
   };
@@ -92,10 +120,7 @@ export default function SignIn({navigation}) {
             <FulloundedButton
               img={require('../../assets/facebook.png')}
               bg="#3e63b5"
-            />
-            <FulloundedButton
-              img={require('../../assets/linkedin.png')}
-              bg="#2797cf"
+              onPress={onFacebookButtonPress}
             />
           </View>
         </View>
