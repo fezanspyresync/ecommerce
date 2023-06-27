@@ -5,6 +5,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import Onboarding from 'react-native-onboarding-swiper';
 
 const data = [
   {id: 1, image: require('../../assets/72342-welcome.json')},
@@ -40,16 +41,43 @@ const RenderList = ({item}) => {
   );
 };
 
-export default function BoardingScreen() {
+export default function BoardingScreen({navigation}) {
   return (
     <View style={{flex: 1}}>
-      <FlatList
-        data={data}
-        contentContainerStyle={{justifyContent: 'space-between'}}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({item}) => <RenderList item={item} />}
-        horizontal
-        pagingEnabled
+      <Onboarding
+        onDone={() => navigation.navigate('signin')}
+        pages={[
+          {
+            backgroundColor: '#fff',
+            imageContainerStyles: {paddingBottom: 0},
+
+            image: (
+              <Lottie
+                autoPlay
+                loop
+                style={{height: hp('30%')}}
+                source={require('../../assets/72342-welcome.json')}
+              />
+            ),
+            title: 'Onboarding',
+            subtitle: 'Done with React Native Onboarding Swiper',
+          },
+          {
+            backgroundColor: '#fff',
+            imageContainerStyles: {paddingBottom: 0},
+
+            image: (
+              <Lottie
+                autoPlay
+                loop
+                style={{height: hp('30%')}}
+                source={require('../../assets/85795-man-and-woman-say-hi.json')}
+              />
+            ),
+            title: 'Onboarding',
+            subtitle: 'Done with React Native Onboarding Swiper',
+          },
+        ]}
       />
     </View>
   );
