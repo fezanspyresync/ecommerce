@@ -2,13 +2,13 @@ import {View, Text, Image} from 'react-native';
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Welcomescreen from '../screens/welcomeScreen';
-import Detail from '../screens/detailScreen';
+// import Detail from '../screens/myshop';
 import Lottie from 'lottie-react-native';
 import {
   DrawerContentScrollView,
   DrawerItemList,
 } from '@react-navigation/drawer';
-import MyShop from '../screens/detailScreen';
+import MyShop from '../screens/myshop';
 
 const Drawer = createDrawerNavigator();
 
