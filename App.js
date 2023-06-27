@@ -9,6 +9,7 @@ import Signup from './src/screens/signup';
 import Toast from 'react-native-toast-message';
 import Welcomescreen from './src/screens/welcomeScreen';
 import DrawerStack from './src/navigation/drawerStack';
+import BoardingScreen from './src/onBoarding/welcome';
 
 const Stack = createStackNavigator();
 
@@ -17,9 +18,9 @@ function App() {
     <>
       <NavigationContainer>
         <Stack.Navigator>
-          {/* <Stack.Screen
-            name="splash"
-            component={Splash}
+          <Stack.Screen
+            name="BoardingScreen"
+            component={BoardingScreen}
             options={{
               headerShown: false,
             }}
@@ -37,7 +38,7 @@ function App() {
             options={{
               headerShown: false,
             }}
-          /> */}
+          />
           <Stack.Screen
             name="Auth"
             component={DrawerStack}
